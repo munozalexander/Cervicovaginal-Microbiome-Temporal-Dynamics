@@ -1,0 +1,66 @@
+Logging started at 14:17:24 on 10 Sep 2020
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/Users/KwonMacBookPro/anaconda/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/Users/KwonMacBookPro/anaconda/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/Users/KwonMacBookPro/anaconda/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/Users/KwonMacBookPro/anaconda/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	/var/folders/_7/l97yqztx1vg4186s_plgl0980000gn/T/
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+alpha_diversity:metrics	shannon
+parallel:jobs_to_start	4
+
+Input file md5 sums:
+1rarefaction5000/rarefy5000.biom: ad187685006744f1ca43d8a588aaa741
+4map/map.txt: c35c39ef9f79a9e32e1db255d003686c
+
+Executing commands.
+
+# Alpha rarefaction command 
+parallel_multiple_rarefactions.py -T -i 1rarefaction5000/rarefy5000.biom -m 10 -x 5000 -s 499 -o 5alpha_rarefaction//rarefaction/  --jobs_to_start 4
+
+Stdout:
+
+Stderr:
+
+# Alpha diversity on rarefied OTU tables command 
+parallel_alpha_diversity.py -T -i 5alpha_rarefaction//rarefaction/ -o 5alpha_rarefaction//alpha_div/ --metrics shannon --jobs_to_start 4
+
+Stdout:
+
+Stderr:
+
+# Collate alpha command 
+collate_alpha.py -i 5alpha_rarefaction//alpha_div/ -o 5alpha_rarefaction//alpha_div_collated/ 
+
+Stdout:
+
+Stderr:
+
+# Skipping removal of intermediate files. command 
+
+
+Stdout:
+
+Stderr:
+
+# Rarefaction plot: All metrics command 
+make_rarefaction_plots.py -i 5alpha_rarefaction//alpha_div_collated/ -m 4map/map.txt -o 5alpha_rarefaction//alpha_rarefaction_plots/ 
+
+Stdout:
+
+Stderr:
+/Users/KwonMacBookPro/anaconda/envs/qiime1/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+
+
+Logging stopped at 14:20:33 on 10 Sep 2020
