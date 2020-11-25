@@ -9,3 +9,7 @@ Cervicovaginal bacterial communities composed of diverse anaerobes with low Lact
 * Analyses examining specific taxa and bacterial species found in `Markov_TaxaLevel.ipynb`
 * Expected figure output found in `figures/`
 
+## Authors
+Alexander Munoz, Matthew R. Hayward, Seth M. Bloom, Muntsa Rocafort, Sinaye Ngcapu, Nomfuneko A. Mafunda, Jiawu Xu, Musie S. Ghebermichael, Douglas S. Kwon
+From Ragon Institute of MGH, MIT, and Harvard; Division of Infectious Diseases, Massachusetts General Hospital; Harvard Medical School; and Centre for the AIDS Programme of Research in South Africa (CAPRISA), Doris Duke Medical Research Institute, Nelson R Mandela School of Medicine, University of KwaZulu-Natal
+
